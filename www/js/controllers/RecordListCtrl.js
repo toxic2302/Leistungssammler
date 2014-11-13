@@ -40,4 +40,10 @@ angular.module('recordsApp').controller('RecordListCtrl',
                 }
             });
         };
+        this.toggleSearch = function () {
+
+        };
+        this.mailFunc = function () {
+
+        }
     });

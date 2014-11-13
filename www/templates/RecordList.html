@@ -1,6 +1,6 @@
 <ion-view title="Leistungen">
     <ion-nav-buttons side="right">
-        <button class="button button-icon icon ion-stats-bars"
+        <button class="button button-icon icon ion-more"
                 ng-click="rlCtrl.showStats()">
         </button>
         <button class="button button-icon icon ion-plus"
@@ -10,7 +10,7 @@
     <ion-content>
         <ion-list can-swipe=true>
             <ion-item class="item-text-wrap"
-                      ng-repeat="record in rlCtrl.records"
+                      ng-repeat="record in (rlCtrl.records | orderBy:['name']:false)"
                       href="#/records/{{record.id}}">
                 {{record.name}}
                 {{record.modulnr}}
@@ -29,3 +29,12 @@
         </div>
     </ion-content>
 </ion-view>
+       <script id="popover.html" type="text/ng-template">
+       <ion-popover-view>
+           <ion-item class="item-icon-left"
+                     ng-click="rlCtrl.mailFunc;popover.hide()"
+                   ng-hide="rlCtrl.mailActive()" href="#">
+               <i class="icon ion-email">Email</i>
+                   </ion-item>
+       </ion-popover-view>
+       </script>
