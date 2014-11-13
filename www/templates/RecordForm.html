@@ -1,0 +1,50 @@
+<ion-view>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-ios7-trash-outline"
+                ng-click="rfCtrl.deleteForm(rfCtrl.record.id)">
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label">ModulNr</span>
+                <input class="text-right" type="text" maxlength="35" ng-model="rfCtrl.record.modulnr">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Name</span>
+                <input class="text-right" type="text" ng-model="rfCtrl.record.name">
+            </label>
+            <label class="item item-checkbox item-checkbox-right">
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="rfCtrl.record.isSummerSem">
+                </label>
+                Sommersemester
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">Jahr</div>
+                <select ng-model="rfCtrl.record.year"
+                        ng-options="y for y in rfCtrl.years">
+                </select>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Creditpoints</span>
+                <input class="text-right" type="text" maxlength="1" ng-model="rfCtrl.record.crp">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Note in %</span>
+                <input class="text-right" type="text" maxlength="3" ng-model="rfCtrl.record.mark">
+            </label>
+            <label class="item item-checkbox item-checkbox-right">
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="rfCtrl.record.gewicht">
+                </label>
+                50% Gewichtung
+            </label>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-positive"
+                    ng-click="rfCtrl.save()">Speichern
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

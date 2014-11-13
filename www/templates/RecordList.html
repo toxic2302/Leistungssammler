@@ -1,0 +1,31 @@
+<ion-view title="Leistungen">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-stats-bars"
+                ng-click="rlCtrl.showStats()">
+        </button>
+        <button class="button button-icon icon ion-plus"
+                ng-click="rlCtrl.addRecord()">
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-list can-swipe=true>
+            <ion-item class="item-text-wrap"
+                      ng-repeat="record in rlCtrl.records"
+                      href="#/records/{{record.id}}">
+                {{record.name}}
+                {{record.modulnr}}
+                ({{record.mark}}% {{record.crp}}crp)
+                <ion-option-button class="button-assertive"
+                                   ng-click="rlCtrl.deleteMod()">Löschen
+                </ion-option-button>
+            </ion-item>
+
+        </ion-list>
+        <div class="card" ng-hide="rlCtrl.records.length">
+            <div class="item item-text-wrap">
+                <p>Keine Leistungen vorhanden</p>
+                <button class="button button-block ion-plus button-light" ng-click="rlCtrl.addRecord()">Leistung anlegen</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
