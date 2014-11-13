@@ -42,7 +42,7 @@ angular.module('recordsApp').controller('RecordListCtrl',
         };
         this.searchActive = false;
         this.toggleSearch = function () {
-            if (this.searchActive){
+            if (this.searchActive) {
                 this.searchQuery = '';
             }
             this.searchActive = !this.searchActive;
@@ -50,10 +50,32 @@ angular.module('recordsApp').controller('RecordListCtrl',
 
         $ionicPopover.fromTemplateUrl('popover.html', {
             scope: $scope
-        }).then(function(popover){
+        }).then(function (popover) {
             $scope.popover = popover;
         });
+        $scope.openPopover = function ($event) {
+            $scope.popover.show($event);
+        };
+        $scope.closePopover = function () {
+            $scope.popover.hide();
+        };
         this.mailFunc = function () {
+            if (window.cordova && cordova.plugins.email) {
 
+                cordova.plugins.email.open({
+                    to: 'toxic@gmx.de',
+                    subject: 'Meine Studienleistungen',
+                    body: 'Meine Studienleistungen'
+                });
+            } else {
+                $ionicPopup.alert({
+                    title: 'Info',
+                    template: 'Keine Email-Unterstützung!',
+                    buttons: [{
+                        text: 'Schließen',
+                        type: 'button-positive'
+                    }]
+                });
+            }
         }
     });
