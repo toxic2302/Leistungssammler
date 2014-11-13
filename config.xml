@@ -1,19 +1,33 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version='1.0' encoding='utf-8'?>
 <widget id="de.thm.mni.mapp.records" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Leistungssammler</name>
-  <description>
+    <name>Leistungssammler</name>
+    <description>
         Eine App zum speichern von Leistungen an der THM Mittelhessen.
     </description>
-  <author email="florian.kolb@mni.thm.de" href="http://floriankolb.de">
+    <author email="florian.kolb@mni.thm.de" href="http://floriankolb.de">
       Florian Kolb
     </author>
-  <content src="index.html"/>
-  <access origin="*"/>
-  <preference name="webviewbounce" value="false"/>
-  <preference name="UIWebViewBounce" value="false"/>
-  <preference name="DisallowOverscroll" value="true"/>
-  <preference name="BackupWebStorage" value="none"/>
-  <feature name="StatusBar">
-    <param name="ios-package" value="CDVStatusBar" onload="true"/>
-  </feature>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="BackupWebStorage" value="none" />
+    <feature name="StatusBar">
+        <param name="ios-package" onload="true" value="CDVStatusBar" />
+    </feature>
+    <feature name="Keyboard">
+        <param name="id" value="com.ionic.keyboard" />
+    </feature>
+    <feature name="EmailComposer">
+        <param name="id" value="de.appplant.cordova.plugin.email-composer" />
+        <param name="url" value="https://github.com/katzer/cordova-plugin-email-composer.git#:." />
+    </feature>
+    <feature name="Console">
+        <param name="id" value="org.apache.cordova.console" />
+    </feature>
+    <feature name="Device">
+        <param name="id" value="org.apache.cordova.device" />
+    </feature>
+<gap:plugin name="de.appplant.cordova.plugin.email-composer" version="0.8.2" />
 </widget>
