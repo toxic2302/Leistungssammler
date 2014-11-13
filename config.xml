@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.mappfklb18u3a1515296" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>mapp-fklb18-u3a1</name>
+<widget id="de.thm.mni.mapp.records" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Leistungssammler</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Eine App zum speichern von Leistungen an der THM Mittelhessen.
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="florian.kolb@mni.thm.de" href="http://floriankolb.de">
+      Florian Kolb
     </author>
   <content src="index.html"/>
   <access origin="*"/>
