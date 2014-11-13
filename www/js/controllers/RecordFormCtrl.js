@@ -4,7 +4,7 @@
  */
 'use strict';
 angular.module('recordsApp').controller('RecordFormCtrl',
-    function ($stateParams, $ionicNavBarDelegate, RecordData, $ionicPopup, $state) {
+    function ($stateParams, $ionicNavBarDelegate, RecordData, $ionicPopup, $state, $scope, $ionicModal, ModuleData) {
         var isEditMode = false;
         if ($stateParams.id == 'new') {
             //create
@@ -77,4 +77,25 @@ angular.module('recordsApp').controller('RecordFormCtrl',
                     }
                 });
             }
+        $ionicModal.fromTemplateUrl('templates/ModuleSearchModal.html', {
+            scope: $scope,
+            animation: 'slide-in-up',
+            focusFirstInput: true
+        }).then(function(modal){
+            $scope.modal = modal;
+        });
+
+        this.openModal = function () {
+            $scope.modules = ModuleData.findAll();
+            $scope.modal.show();
+        };
+
+        var thisCtrl = this;
+        $scope.moduleSelected = function (module) {
+            // this == child scope modal
+            thisCtrl.record.name = module.name;
+            thisCtrl.record.crp = module.crp;
+            thisCtrl.record.modulnr = module.modulnr;
+            $scope.modal.hide();
+        };
     });
