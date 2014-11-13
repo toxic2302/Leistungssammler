@@ -11,7 +11,7 @@ Dies ist eine Hybrid-App geschrieben mit dem ionicFramework und AngularJS. Man k
 - [x] Statistiken anzeigen lassen
 - [x] Leistungen in der RecordListView und RecordFormView löschen
 - [x] Leistungen ändern
-- [ ] Leistungen per Email versenden
-- [ ] Leistungen sortieren und suchen
+- [x] Leistungen per Email versenden
+- [x] Leistungen sortieren und suchen
 - [ ] Modul-Picker
 - [ ] Modulkatalog aktualisieren
