@@ -1,16 +1,30 @@
 <ion-view title="Leistungen">
     <ion-nav-buttons side="right">
         <button class="button button-icon icon ion-more"
-                ng-click="rlCtrl.showStats()">
+                ng-click="openPopover($event)">
         </button>
         <button class="button button-icon icon ion-plus"
                 ng-click="rlCtrl.addRecord()">
         </button>
     </ion-nav-buttons>
     <ion-content>
+        <div class="item item-input-inset"
+             ng-show="rlCtrl.searchActive">
+
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios7-search placeholder-icon"></i>
+                <input type="text" placeholder="Search"
+                       ng-model="rlCtrl.searchQuery">
+            </label>
+
+            <button class="button button-clear"
+                    style="min-height: inherit;line-height: inherit;"
+                    ng-click="rlCtrl.toggleSearch()">Cancel
+            </button>
+        </div>
         <ion-list can-swipe=true>
             <ion-item class="item-text-wrap"
-                      ng-repeat="record in (rlCtrl.records | orderBy:['name']:false)"
+                      ng-repeat="record in filteredRecords = (rlCtrl.records | filter:{name: rlCtrl.searchQuery} | orderBy:'name')"
                       href="#/records/{{record.id}}">
                 {{record.name}}
                 {{record.modulnr}}
@@ -24,17 +38,27 @@
         <div class="card" ng-hide="rlCtrl.records.length">
             <div class="item item-text-wrap">
                 <p>Keine Leistungen vorhanden</p>
-                <button class="button button-block ion-plus button-light" ng-click="rlCtrl.addRecord()">Leistung anlegen</button>
+                <button class="button button-block ion-plus button-light" ng-click="rlCtrl.addRecord()">Leistung
+                    anlegen
+                </button>
             </div>
         </div>
     </ion-content>
 </ion-view>
-       <script id="popover.html" type="text/ng-template">
-       <ion-popover-view>
-           <ion-item class="item-icon-left"
-                     ng-click="rlCtrl.mailFunc;popover.hide()"
-                   ng-hide="rlCtrl.mailActive()" href="#">
-               <i class="icon ion-email">Email</i>
-                   </ion-item>
-       </ion-popover-view>
-       </script>
+<script id="popover.html" type="text/ng-template">
+    <ion-popover-view>
+        <ion-item class="item-icon-left"
+                  ng-click="rlCtrl.toggleSearch();popover.hide()"
+                  ng-hide="rlCtrl.searchActive" href="#">
+            <i class="icon ion-search">Suche</i>
+        </ion-item>
+        <ion-item class="item-icon-left"
+                  ng-click="rlCtrl.showStats();popover.hide()">
+            <i class="icon ion-stats-bars">Statistik</i>
+        </ion-item>
+        <ion-item class="item-icon-left"
+                  ng-click="rlCtrl.mailFunc();popover.hide()">
+            <i class="icon ion-email">Email</i>
+        </ion-item>
+    </ion-popover-view>
+</script>
