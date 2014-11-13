@@ -16,7 +16,6 @@
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
-    <!--<gap:plugin name="de.appplant.cordova.plugin.email-composer" version="0.8.2"/>-->
     <feature name="Keyboard">
         <param name="id" value="com.ionic.keyboard" />
     </feature>

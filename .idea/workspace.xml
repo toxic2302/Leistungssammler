@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d02d68e-ad15-4afe-b67d-ce45504fa302" name="Default" comment="email plugin implementiert">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/services/model/Module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/services/ModuleData.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/templates/ModuleSearchModal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/RecordForm.html" afterPath="$PROJECT_DIR$/www/templates/RecordForm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/RecordFormCtrl.js" afterPath="$PROJECT_DIR$/www/js/controllers/RecordFormCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/RecordList.html" afterPath="$PROJECT_DIR$/www/templates/RecordList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/mapp-fklb18-u3a1.iml" afterPath="$PROJECT_DIR$/.idea/mapp-fklb18-u3a1.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="3d02d68e-ad15-4afe-b67d-ce45504fa302" name="Default" comment="email plugin implementiert" />
     <ignored path="mapp-fklb18-u3a1.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
