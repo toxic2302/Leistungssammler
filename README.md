@@ -13,7 +13,7 @@ Dies ist eine Hybrid-App geschrieben mit dem ionicFramework und AngularJS. Man k
 - [x] Leistungen ändern
 - [x] Leistungen per Email versenden
 - [x] Leistungen sortieren und suchen
-- [ ] Modul-Picker
+- [x] Modul-Picker
 - [ ] Modulkatalog aktualisieren
 - [ ] App-Icon
 - [ ] optimierte listenansicht
