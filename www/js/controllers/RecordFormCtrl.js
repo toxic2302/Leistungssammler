@@ -86,7 +86,7 @@ angular.module('recordsApp').controller('RecordFormCtrl',
         });
 
         this.openModal = function () {
-            $scope.modules = ModuleData.findAll();
+            $scope.modules = ModuleData.load();
             $scope.modal.show();
         };
 
