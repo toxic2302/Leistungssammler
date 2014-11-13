@@ -4,7 +4,7 @@
  */
 'use strict';
 angular.module('recordsApp').controller('RecordListCtrl',
-    function ($state, RecordData, StatisticData, $ionicPopup) {
+    function ($state, RecordData, StatisticData, $ionicPopup, $ionicPopover, $scope) {
 
         this.records = RecordData.findAll();
         var thisSt = this;
@@ -40,9 +40,19 @@ angular.module('recordsApp').controller('RecordListCtrl',
                 }
             });
         };
+        this.searchActive = false;
         this.toggleSearch = function () {
-
+            if (this.searchActive){
+                this.searchQuery = '';
+            }
+            this.searchActive = !this.searchActive;
         };
+
+        $ionicPopover.fromTemplateUrl('popover.html', {
+            scope: $scope
+        }).then(function(popover){
+            $scope.popover = popover;
+        });
         this.mailFunc = function () {
 
         }
