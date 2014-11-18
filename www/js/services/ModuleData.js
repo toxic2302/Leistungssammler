@@ -35,8 +35,6 @@ angular.module('recordsApp').service('ModuleData',
                 }).error(function (data, status, headers, config) {
                     return status
                 });
-            } else {
-                console.log("noch keine 24 Stunden vergangen");
             }
         };
         this.findAll = function () {

@@ -1,9 +1,9 @@
 <ion-view title="Leistungen">
     <ion-nav-buttons side="right">
-        <button class="button button-icon icon ion-android-add"
+        <button class="button button-icon icon ion-ios7-plus-outline"
                 ng-click="rlCtrl.addRecord()">
         </button>
-        <button class="button button-icon icon ion-android-more"
+        <button class="button button-icon icon ion-ios7-drag"
                 ng-click="openPopover($event)">
         </button>
     </ion-nav-buttons>
@@ -53,16 +53,16 @@
                       ng-click="rlCtrl.toggleSearch();popover.hide()"
                       ng-hide="rlCtrl.searchActive" href="#">
 
-                <i class="icon ion-android-search"></i>Suche
+                <i class="icon ion-ios7-search"></i>Suche
 
             </ion-item>
             <ion-item class="item-icon-left"
                       ng-click="rlCtrl.showStats();popover.hide()">
-                <i class="icon ion-android-star"></i>Statistik
+                <i class="icon ion-ios7-pulse"></i>Statistik
             </ion-item>
             <ion-item class="item-icon-left"
                       ng-click="rlCtrl.mailFunc();popover.hide()">
-                <i class="icon ion-android-mail"></i>Email
+                <i class="icon ion-ios7-email-outline"></i>Email
             </ion-item>
         </ion-list>
     </ion-popover-view>
