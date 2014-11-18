@@ -15,7 +15,7 @@ Dies ist eine Hybrid-App geschrieben mit dem ionicFramework und AngularJS. Man k
 - [x] Leistungen sortieren und suchen
 - [x] Modul-Picker
 - [x] Modulkatalog aktualisieren
-- [ ] App-Icon
+- [x] App-Icon
 - [ ] optimierte listenansicht
 - [ ] Cloud-Storage
 
