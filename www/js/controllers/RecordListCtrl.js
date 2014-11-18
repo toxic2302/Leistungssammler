@@ -78,13 +78,13 @@ angular.module('recordsApp').controller('RecordListCtrl',
             if (window.cordova && cordova.plugins.email) {
 
                 for (var i = 0; i < records.length; i++) {
-                    recordStr += records[i].name + ' ' + records[i].mark + '%<br>';
+                    recordStr += records[i].name + ' ' + records[i].mark + '%<br />';
                 }
 
                 cordova.plugins.email.open({
                     to: 'toxic@gmx.de',
                     subject: 'Meine Studienleistungen',
-                    body: '<b>Meine Studienleistungen:</b><br>' + '<br><b>Statistiken:</b><br>' + 'Leistungen: ' + StatisticData.countRecords() + '<br>Summe Crp: ' + StatisticData.sumCrp() + '<br>Crp bis Ziel: ' + StatisticData.remainCrp() + '<br>Durchschnitt: ' + StatisticData.avg() + ' %' + '<br>50% Leistungen: ' + StatisticData.countWeight() + '<br>' + '<b>Leistungen:</b><br>' + recordStr
+                    body: '<b>Meine Studienleistungen:</b><br />' + '<br><b>Statistiken:</b>' + '<br>Leistungen: ' + StatisticData.countRecords() + '<br>Summe Crp: ' + StatisticData.sumCrp() + '<br>Crp bis Ziel: ' + StatisticData.remainCrp() + '<br>Durchschnitt: ' + StatisticData.avg() + ' %' + '<br>50% Leistungen: ' + StatisticData.countWeight() + '<b>Leistungen:</b><br />' + recordStr
                 });
             } else {
                 $ionicPopup.alert({

@@ -21,4 +21,3 @@ Dies ist eine Hybrid-App geschrieben mit dem ionicFramework und AngularJS. Man k
 
 ######TODO
 
-- Email ausgabe formatieren
