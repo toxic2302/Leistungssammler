@@ -1,10 +1,10 @@
 <ion-view title="Leistungen">
     <ion-nav-buttons side="right">
-        <button class="button button-icon icon ion-more"
-                ng-click="openPopover($event)">
-        </button>
-        <button class="button button-icon icon ion-plus"
+        <button class="button button-icon icon ion-android-add"
                 ng-click="rlCtrl.addRecord()">
+        </button>
+        <button class="button button-icon icon ion-android-more"
+                ng-click="openPopover($event)">
         </button>
     </ion-nav-buttons>
     <ion-content>
@@ -48,18 +48,22 @@
 </ion-view>
 <script id="popover.html" type="text/ng-template">
     <ion-popover-view>
-        <ion-item class="item-icon-left"
-                  ng-click="rlCtrl.toggleSearch();popover.hide()"
-                  ng-hide="rlCtrl.searchActive" href="#">
-            <i class="icon ion-search">Suche</i>
-        </ion-item>
-        <ion-item class="item-icon-left"
-                  ng-click="rlCtrl.showStats();popover.hide()">
-            <i class="icon ion-stats-bars">Statistik</i>
-        </ion-item>
-        <ion-item class="item-icon-left"
-                  ng-click="rlCtrl.mailFunc();popover.hide()">
-            <i class="icon ion-email">Email</i>
-        </ion-item>
+        <ion-list>
+            <ion-item class="item-icon-left"
+                      ng-click="rlCtrl.toggleSearch();popover.hide()"
+                      ng-hide="rlCtrl.searchActive" href="#">
+
+                <i class="icon ion-android-search"></i>Suche
+
+            </ion-item>
+            <ion-item class="item-icon-left"
+                      ng-click="rlCtrl.showStats();popover.hide()">
+                <i class="icon ion-android-star"></i>Statistik
+            </ion-item>
+            <ion-item class="item-icon-left"
+                      ng-click="rlCtrl.mailFunc();popover.hide()">
+                <i class="icon ion-android-mail"></i>Email
+            </ion-item>
+        </ion-list>
     </ion-popover-view>
 </script>

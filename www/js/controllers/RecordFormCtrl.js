@@ -61,32 +61,51 @@ angular.module('recordsApp').controller('RecordFormCtrl',
                 $ionicNavBarDelegate.back();
             }
         },
+            //vorab laden der Daten
+            $scope.modules = ModuleData.load();
         /**
          * DeleteForm löscht einen Eintrag und verursacht einen state-wechsel zur RecordList
          */
-            this.deleteForm = function (id) {
-                var confirm = $ionicPopup.confirm({
-                    title: 'Eintrag löschen',
-                    template: 'Wollen sie den Eintrag wirklich löschen?',
-                    cancelText: 'Abbrechen'
-                });
-                confirm.then(function (res) {
-                    if (res) {
-                        RecordData.delete(id);
-                        $state.go('records');
-                    }
-                });
-            }
-        $ionicModal.fromTemplateUrl('templates/ModuleSearchModal.html', {
-            scope: $scope,
-            animation: 'slide-in-up',
-            focusFirstInput: true
-        }).then(function(modal){
-            $scope.modal = modal;
-        });
+        this.deleteForm = function (id) {
+            var confirm = $ionicPopup.confirm({
+                title: 'Eintrag löschen',
+                template: 'Wollen sie den Eintrag wirklich löschen?',
+                cancelText: 'Abbrechen'
+            });
+            confirm.then(function (res) {
+                if (res) {
+                    RecordData.delete(id);
+                    $state.go('records');
+                }
+            });
+        },
+            $ionicModal.fromTemplateUrl('templates/ModuleSearchModal.html', {
+                scope: $scope,
+                animation: 'slide-in-up',
+                focusFirstInput: true
+            }).then(function (modal) {
+                $scope.modal = modal;
+            });
 
         this.openModal = function () {
             $scope.modules = ModuleData.load();
+            var err = ModuleData.load();
+            // status 0 == no network
+            // status 0 == modules.json not modified in browser
+            if (err == 0) {
+                $ionicPopup.alert({
+                    title: 'Kein Netzwerk',
+                    template: 'Bitte überprüfen sie ihre Internetverbindung und versuchen sie es dann nochmal.'
+                });
+            }
+            /*// status 304 == modules.json not modified on device
+             if (err == 304) {
+             $ionicPopup.alert({
+             title: 'Up-to-date',
+             template: 'Alle Module sind aktuell'
+             });
+             }*/
+            $scope.modules = ModuleData.findAll();
             $scope.modal.show();
         };
 

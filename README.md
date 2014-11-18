@@ -14,7 +14,12 @@ Dies ist eine Hybrid-App geschrieben mit dem ionicFramework und AngularJS. Man k
 - [x] Leistungen per Email versenden
 - [x] Leistungen sortieren und suchen
 - [x] Modul-Picker
-- [ ] Modulkatalog aktualisieren
+- [x] Modulkatalog aktualisieren
 - [ ] App-Icon
 - [ ] optimierte listenansicht
 - [ ] Cloud-Storage
+
+######TODO
+
+- Email ausgabe formatieren
+- Andere Icons wählen

@@ -8,6 +8,13 @@ angular.module('recordsApp').controller('RecordListCtrl',
 
         this.records = RecordData.findAll();
         var thisSt = this;
+        //Für Zustandswechsel anmelden
+        $scope.$on('$stateChangeStart',
+            function (event) {
+                if (thisSt.searchActive == true) {
+                    var saveSearchQuery = localStorage.setItem('saveQuery', JSON.stringify(thisSt.searchQuery));
+                }
+            });
         /**
          * Verursacht einen State-wechsel zur "RecordFormView"
          */
@@ -41,6 +48,11 @@ angular.module('recordsApp').controller('RecordListCtrl',
             });
         };
         this.searchActive = false;
+        if (localStorage.getItem('saveQuery')) {
+            this.searchActive = true;
+            this.searchQuery = JSON.parse(localStorage.getItem('saveQuery'));
+            localStorage.removeItem('saveQuery');
+        }
         this.toggleSearch = function () {
             if (this.searchActive) {
                 this.searchQuery = '';
@@ -60,12 +72,19 @@ angular.module('recordsApp').controller('RecordListCtrl',
             $scope.popover.hide();
         };
         this.mailFunc = function () {
+            var records = RecordData.findAll();
+            var recordStr = '';
+
             if (window.cordova && cordova.plugins.email) {
+
+                for (var i = 0; i < records.length; i++) {
+                    recordStr += records[i].name + ' ' + records[i].mark + '%<br>';
+                }
 
                 cordova.plugins.email.open({
                     to: 'toxic@gmx.de',
                     subject: 'Meine Studienleistungen',
-                    body: 'Meine Studienleistungen'
+                    body: '<b>Meine Studienleistungen:</b><br>' + '<br><b>Statistiken:</b><br>' + 'Leistungen: ' + StatisticData.countRecords() + '<br>Summe Crp: ' + StatisticData.sumCrp() + '<br>Crp bis Ziel: ' + StatisticData.remainCrp() + '<br>Durchschnitt: ' + StatisticData.avg() + ' %' + '<br>50% Leistungen: ' + StatisticData.countWeight() + '<br>' + '<b>Leistungen:</b><br>' + recordStr
                 });
             } else {
                 $ionicPopup.alert({
