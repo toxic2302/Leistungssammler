@@ -3,13 +3,39 @@
  * Created by flo on 03.11.14.
  */
 'use strict';
-angular.module('recordsApp').factory('RecordData', function ($state, Record) {
+angular.module('recordsApp').factory('RecordData', function ($firebase, FIREBASE_URL) {
+
+    var rootRef = new Firebase(FIREBASE_URL);
+    var recordsRef = rootRef.child('records');
+
+    //Angularfire Wrapper
+    var recordsRefAngular = $firebase(recordsRef);
 
     var service = {
-        /**
+        findAll: function () {
+            return recordsRefAngular.$asArray();
+        },
+        findById: function (id) {
+            return this.findAll().$getRecord(id);
+        },
+        delete: function (id) {
+            this.findAll().$remove(this.findById(id));
+        },
+        persist: function (record) {
+            this.findAll().$add(record);
+        },
+        update: function (record) {
+            this.findAll().$save(record);
+        }
+    };
+
+    /* var service = {
+     */
+    /**
          * get all records from the localStorage
          * @returns {*} an array of records
-         */
+     */
+    /*
         findAll: function () {
             var records = localStorage.getItem('records');
             if (!records) {
@@ -22,11 +48,13 @@ angular.module('recordsApp').factory('RecordData', function ($state, Record) {
             }
             return records;
         },
-        /**
+     */
+    /**
          * get a record by his Id
          * @param id to search for
          * @returns {*} a record or null
-         */
+     */
+    /*
         findById: function (id) {
             var records = this.findAll();
 
@@ -37,10 +65,12 @@ angular.module('recordsApp').factory('RecordData', function ($state, Record) {
             }
             return null;
         },
-        /**
+     */
+    /**
          * delete a record from the localStorage
          * @param id which want to delete
-         */
+     */
+    /*
         delete: function (id) {
             var records = this.findAll();
             records.splice(id-1,1);
@@ -51,17 +81,21 @@ angular.module('recordsApp').factory('RecordData', function ($state, Record) {
             localStorage.setItem('records', JSON.stringify(records));
             localStorage.setItem('nextRecordId', records.length + 1);
 
-            /*for (var i = 0; i < records.length; i++){
+     */
+    /*for (var i = 0; i < records.length; i++){
 
                 if (records[i].id == id){
                     records.splice(i, 1);
                 }
-            }*/
+     }*/
+    /*
         },
-        /**
+     */
+    /**
          * save a record to the localStorage
          * @param record to save in the localStorage
-         */
+     */
+    /*
         persist: function (record) {
             var records = this.findAll();
             record.id = localStorage.getItem('nextRecordId')
@@ -69,10 +103,12 @@ angular.module('recordsApp').factory('RecordData', function ($state, Record) {
             localStorage.setItem('records', JSON.stringify(records));
             localStorage.setItem('nextRecordId', records.length + 1);
         },
-        /**
+     */
+    /**
          * update a record to the localStorage
          * @param record to update
-         */
+     */
+    /*
         update: function (record) {
             var records = this.findAll();
             //record zu der richtigen ID updaten
@@ -83,6 +119,6 @@ angular.module('recordsApp').factory('RecordData', function ($state, Record) {
             }
             localStorage.setItem('records', JSON.stringify(records));
         }
-    };
+     };*/
     return service;
 });

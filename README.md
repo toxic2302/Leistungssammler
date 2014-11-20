@@ -17,7 +17,7 @@ Dies ist eine Hybrid-App geschrieben mit dem ionicFramework und AngularJS. Man k
 - [x] Modulkatalog aktualisieren
 - [x] App-Icon
 - [ ] optimierte listenansicht
-- [ ] Cloud-Storage
+- [x] Cloud-Storage
 
 ######TODO
 

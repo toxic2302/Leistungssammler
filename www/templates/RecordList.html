@@ -23,9 +23,9 @@
             </button>
         </div>
         <ion-list can-swipe=true>
-            <ion-item class="item-text-wrap"
+            <ion-item class="item-text-wrap animation"
                       ng-repeat="record in filteredRecords = (rlCtrl.records | filter:{name: rlCtrl.searchQuery} | orderBy:'name')"
-                      href="#/records/{{record.id}}">
+                      href="#/records/{{record.$id}}">
                 {{record.name}}
                 {{record.modulnr}}
                 ({{record.mark}}% {{record.crp}}crp)
