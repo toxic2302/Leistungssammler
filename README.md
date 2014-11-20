@@ -21,5 +21,4 @@ Dies ist eine Hybrid-App geschrieben mit dem ionicFramework und AngularJS. Man k
 
 ######TODO
 
-- Email ausgabe formatieren
-- Andere Icons wählen
+-firebase delete funktioniert nicht
