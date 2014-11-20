@@ -1,5 +1,5 @@
 /**
- * RecordData saves, update, delete and find a record.
+ * RecordData saves, update, delete and find a record. Based on the cloudstorage from Firebase
  * Created by flo on 03.11.14.
  */
 'use strict';
