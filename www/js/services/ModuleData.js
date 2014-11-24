@@ -6,6 +6,7 @@ angular.module('recordsApp').service('ModuleData',
         this.load = function () {
             var url = 'http://suessdev1.thm.de/mapp/modules.json';
             //var url = 'http://87.106.18.242/mapp/modules.json';
+            //var url = 'http://floriankolb.de/mapp/modules.json';
             var lastModified = localStorage.getItem('modulesLastModified');
             var reqOptions = {};
             var lastUpdate = 0;
@@ -34,8 +35,6 @@ angular.module('recordsApp').service('ModuleData',
                 }).error(function (data, status, headers, config) {
                     return status
                 });
-            } else {
-                console.log("noch keine 24 Stunden vergangen");
             }
         };
         this.findAll = function () {
