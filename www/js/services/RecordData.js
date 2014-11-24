@@ -7,6 +7,7 @@ angular.module('recordsApp').factory('RecordData', function ($firebase, FIREBASE
 
     var rootRef = new Firebase(FIREBASE_URL);
     var recordsRef = rootRef.child('records');
+    //var rootObj = $firebase(new Firebase(FIREBASE_URL)).$asObject();
 
     //Angularfire Wrapper
     var recordsRefAngular = $firebase(recordsRef);
