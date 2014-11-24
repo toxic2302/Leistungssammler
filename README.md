@@ -21,5 +21,5 @@ Dies ist eine Hybrid-App geschrieben mit dem ionicFramework und AngularJS. Man k
 
 ######TODO
 
--firebase delete funktioniert nicht
--listenansicht noch weiter verbessern
+* firebase delete funktioniert nicht
+* listenansicht noch weiter verbessern
