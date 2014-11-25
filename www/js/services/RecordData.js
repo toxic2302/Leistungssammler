@@ -20,7 +20,8 @@ angular.module('recordsApp').factory('RecordData', function ($firebase, FIREBASE
             return this.findAll().$getRecord(id);
         },
         delete: function (id) {
-            this.findAll().$remove(this.findById(id));
+            var item = this.findById(id);
+            this.findAll().$remove(item);
         },
         persist: function (record) {
             this.findAll().$add(record);

@@ -20,6 +20,3 @@ Dies ist eine Hybrid-App geschrieben mit dem ionicFramework und AngularJS. Man k
 - [x] Cloud-Storage
 
 ######TODO
-
--firebase delete funktioniert nicht
--listenansicht noch weiter verbessern

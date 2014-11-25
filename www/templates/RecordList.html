@@ -25,13 +25,14 @@
         <ion-list can-swipe=true>
             <ion-item class="item-text-wrap animation"
                       ng-repeat="record in filteredRecords = (rlCtrl.records | filter:{name: rlCtrl.searchQuery} | orderBy:'name')"
-                <h2>{{record.name}}</h2>
-                <p style="text-align: right">{{record.mark}}%</p>
+                      href="#/records/{{record.$id}}">
+                <span class="h4 dark">{{record.name}}</span>
+                <span class="mark-position">{{record.mark}}%</span>
 
-                <p style="font-size: small">{{record.modulnr}} {{record.crp}} Crp</p>
+                <p class="h4">{{record.modulnr}} {{record.crp}} Crp</p>
 
                 <ion-option-button class="button-assertive"
-                                   ng-click="rlCtrl.deleteMod()">Löschen
+                                   ng-click="rlCtrl.deleteMod(record.$id)">Löschen
                 </ion-option-button>
             </ion-item>
 

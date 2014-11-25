@@ -43,6 +43,7 @@ angular.module('recordsApp').controller('RecordListCtrl',
             confirm.then(function (res) {
                 if (res) {
                     RecordData.delete(id);
+                    //console.log(id);
                     thisSt.records = RecordData.findAll();
                 }
             });

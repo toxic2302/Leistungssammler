@@ -1,1 +1,6 @@
 /* Empty. Add your own CSS if you like */
+.mark-position {
+    position: absolute;
+    top: 35%;
+    right: 15px;
+}
