@@ -18,7 +18,7 @@ angular.module('recordsApp').controller('RecordFormCtrl',
         }
         // create years
         var years = [];
-        for (var i = 2014; i > 1999; i--) {
+        for (var i = 2020; i > 1999; i--) {
             years.push(i);
         }
         this.years = years;

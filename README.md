@@ -16,9 +16,7 @@ Dies ist eine Hybrid-App geschrieben mit dem ionicFramework und AngularJS. Man k
 - [x] Modul-Picker
 - [x] Modulkatalog aktualisieren
 - [x] App-Icon
-- [ ] optimierte listenansicht
+- [x] optimierte listenansicht
 - [x] Cloud-Storage
 
 ######TODO
-
--firebase delete funktioniert nicht
